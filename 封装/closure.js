@@ -47,9 +47,6 @@ const Book = (() => {
     }
   }
 
-  // Public static method
-  _Book.getIsbns = _ => isbns;
-
   // Public non-privileged method
   _Book.prototype = {
     display() {
@@ -58,6 +55,11 @@ const Book = (() => {
       console.log(<div>${htmlStr}</div>);
     },
   };
+
+  // Public static privileged method
+  _Book.getAllIsbn = _ => isbns;
+
+  // Public static non-privileged method
 
   return _Book;
 
